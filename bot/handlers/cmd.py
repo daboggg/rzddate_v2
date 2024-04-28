@@ -2,12 +2,14 @@ from aiogram import Router
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 from aiogram.utils.formatting import Italic
+from aiogram_dialog import DialogManager, StartMode
+
+from bot.state_groups import MainDialogSG
 
 cmd_router = Router()
 
 
+# отрабатывает по команде /start
 @cmd_router.message(CommandStart())
-async def cmd_start(message: Message) -> None:
-    # await add_user_to_db(message.from_user.id, message.from_user.username, message.from_user.first_name,
-    #                      message.from_user.last_name)
-    await message.answer(Italic("hello").as_html())
+async def cmd_start(message:Message, dialog_manager: DialogManager) -> None:
+    await dialog_manager.start(MainDialogSG.start, mode=StartMode.RESET_STACK)
