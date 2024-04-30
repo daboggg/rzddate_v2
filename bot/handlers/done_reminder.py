@@ -18,7 +18,7 @@ async def done_reminder(callback: CallbackQuery, apscheduler: AsyncIOScheduler) 
     # форматирование текста для напоминания
     format_text = as_list(
         Bold('👍 Выполнено\n'),
-        '⁉️ Чтобы начать сначала нажмите  меню -> /start'
+        '⁉️ Чтобы начать, нажмите  меню -> /start'
     )
 
     await callback.answer()

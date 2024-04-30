@@ -8,3 +8,8 @@ class MainDialogSG(StatesGroup):
     get_text_or_voice = State()
     remind_me = State()
     finish = State()
+
+
+class ListOfRemindersSG(StatesGroup):
+    start = State()
+    show_reminder = State()

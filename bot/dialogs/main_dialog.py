@@ -155,7 +155,7 @@ main_dialog = Dialog(
     ),
     Window(
         Const('✔️ Напоминание о покупке билета запланировано\n'),
-        Const('⁉️ Чтобы начать сначала нажмите  меню -> /start'),
+        Const('⁉️ Чтобы начать сначала, нажмите  меню -> /start'),
         state=MainDialogSG.finish
 
     )

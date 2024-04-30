@@ -7,9 +7,11 @@ from aiogram_dialog import setup_dialogs
 
 from bot.comands import set_commands
 from bot.core import scheduler, bot
+from bot.dialogs.list_reminders_dialog import list_reminders_dialog
 from bot.dialogs.main_dialog import main_dialog
 from bot.handlers.cmd import cmd_router
 from bot.handlers.done_reminder import done_reminder_router
+from bot.handlers.other import other_router
 from bot.middlewares.apschedmiddleware import SchedulerMiddleware
 from settings import settings
 
@@ -48,6 +50,8 @@ async def start():
         cmd_router,
         done_reminder_router,
         main_dialog,
+        list_reminders_dialog,
+        other_router
     )
 
     # подключение диалогов
